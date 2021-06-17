@@ -1,6 +1,8 @@
-import { stringify } from 'querystring';
+import Link from 'next/link';
+
 import { SignInButton } from '../SignInButton';
 import styles from './styles.module.scss';
+
 
 export function Header (){
   return (
@@ -8,8 +10,12 @@ export function Header (){
       <div className={styles.headerContent}>
         <img src="/images/logo.svg" alt="logo" />
         <nav>
-          <a href="/" className={styles.active}>Home</a>
-          <a href="/posts">Posts</a>
+          <Link href="/">
+            <a className={styles.active}>Home</a>
+          </Link>
+          <Link href="/posts">
+            <a>Posts</a>
+          </Link>
         </nav>
         <SignInButton />
       </div>
